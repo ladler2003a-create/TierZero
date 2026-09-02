@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VRC Tier 0 Project Check</title>
+    <link rel="stylesheet" href="styles.css?v=12" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <div class="brand">
+          <div class="brand-mark">
+            <img src="assets/hgf-logo-spot-transparent.png" alt="HGF" />
+          </div>
+          <div>
+            <h1>First-pass check</h1>
+            <p>Vulnerability Reduction Credit (VRC™)</p>
+          </div>
+        </div>
+
+        <nav class="nav-tabs" aria-label="Views">
+          <button class="nav-tab active" data-tab="start" type="button">
+            <span class="icon" data-icon="spark"></span>
+            <span>Start here</span>
+          </button>
+          <button class="nav-tab" data-tab="overview" type="button">
+            <span class="icon" data-icon="gauge"></span>
+            <span>Overview</span>
+          </button>
+          <button class="nav-tab" data-tab="intake" type="button">
+            <span class="icon" data-icon="clipboard"></span>
+            <span>Questions</span>
+          </button>
+          <button class="nav-tab" data-tab="decisions" type="button">
+            <span class="icon" data-icon="route"></span>
+            <span>Review</span>
+          </button>
+          <button class="nav-tab" data-tab="gaps" type="button">
+            <span class="icon" data-icon="list"></span>
+            <span>Follow-up</span>
+          </button>
+          <button class="nav-tab" data-tab="glossary" type="button">
+            <span class="icon" data-icon="book"></span>
+            <span>Glossary</span>
+          </button>
+          <button class="nav-tab" data-tab="model" type="button">
+            <span class="icon" data-icon="database"></span>
+            <span>Saved info</span>
+          </button>
+        </nav>
+
+        <div class="source-note">
+          <span>Early check only</span>
+          <small>This is a <a class="glossary-link" href="#glossary-tier-0" data-term="tier-0">first-pass</a> screen. It does not approve a <a class="glossary-link" href="#glossary-vrc" data-term="vrc">VRC</a>, give legal advice, or replace a <a class="glossary-link" href="#glossary-deeper-review" data-term="deeper-review">formal review</a>.</small>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="topbar-logo" aria-label="HGF">
+            <img src="assets/hgf-logo-spot-transparent.png" alt="HGF logo" />
+          </div>
+          <div class="project-heading">
+            <label for="projectName">Project</label>
+            <textarea id="projectName" rows="2" placeholder="Project name" autocomplete="off"></textarea>
+          </div>
+          <div class="actions" aria-label="App actions">
+            <button id="loadExample" class="icon-button" title="Load example" type="button">
+              <span class="icon" data-icon="spark"></span>
+            </button>
+            <button id="importJson" class="icon-button" title="Load saved answers" type="button">
+              <span class="icon" data-icon="upload"></span>
+            </button>
+            <button id="exportJson" class="icon-button" title="Save answers" type="button">
+              <span class="icon" data-icon="download"></span>
+            </button>
+            <button id="exportReport" class="command-button" type="button">
+              <span class="icon" data-icon="file"></span>
+              <span>Summary</span>
+            </button>
+            <button id="resetApp" class="icon-button danger" title="Reset app" type="button">
+              <span class="icon" data-icon="reset"></span>
+            </button>
+            <input id="jsonFile" type="file" accept="application/json,.json" hidden />
+          </div>
+        </header>
+
+        <section id="start" class="view active" aria-labelledby="startTitle">
+          <div class="intro-hero">
+            <div class="intro-copy">
+              <p class="eyebrow">Start here</p>
+              <h2 id="startTitle">A first-pass check for adaptation projects</h2>
+              <p class="intro-lede">
+                This tool helps project owners see whether an <a class="glossary-link" href="#glossary-adaptation-project" data-term="adaptation-project">adaptation project</a> has enough basic information to be considered for a deeper <a class="glossary-link" href="#glossary-vrc" data-term="vrc">Vulnerability Reduction Credit (VRC™)</a> review.
+              </p>
+              <div class="intro-actions">
+                <button class="command-button" type="button" data-go-tab="intake">
+                  <span class="icon" data-icon="clipboard"></span>
+                  <span>Start questions</span>
+                </button>
+                <button class="secondary-button" type="button" data-go-tab="overview">
+                  <span class="icon" data-icon="gauge"></span>
+                  <span>View result page</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="intro-panel">
+              <img class="intro-logo full-logo" src="assets/hgf-logo.svg" alt="Higher Ground Foundation logo" />
+              <h3>What you get</h3>
+              <ul>
+                <li>A simple read on whether the project is ready for <a class="glossary-link" href="#glossary-deeper-review" data-term="deeper-review">deeper review</a>.</li>
+                <li>A list of <a class="glossary-link" href="#glossary-must-fix" data-term="must-fix">must-fix</a> issues and missing answers.</li>
+                <li>A short summary you can save and share.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="intro-grid" aria-label="About this check">
+            <article class="intro-card">
+              <h3>Why use it</h3>
+              <p>
+                <a class="glossary-link" href="#glossary-adaptation-project" data-term="adaptation-project">Adaptation projects</a> often have strong practical value but uneven documentation. This check shows where the case is already clear and where more support is needed.
+              </p>
+            </article>
+            <article class="intro-card">
+              <h3>Time needed</h3>
+              <p>
+                A quick first pass can take 15 to 30 minutes if you know the project. A stronger pass may take longer if you need to collect sources or estimates.
+              </p>
+            </article>
+            <article class="intro-card">
+              <h3>What helps</h3>
+              <p>
+                Useful inputs include a project description, map or service area, <a class="glossary-link" href="#glossary-climate-risk" data-term="climate-risk">climate-risk</a> source, rough <a class="glossary-link" href="#glossary-loss-estimate" data-term="loss-estimate">loss estimates</a>, <a class="glossary-link" href="#glossary-monitoring-plan" data-term="monitoring-plan">monitoring plan</a>, and <a class="glossary-link" href="#glossary-claim-owner" data-term="claim-owner">claim owner</a>.
+              </p>
+            </article>
+            <article class="intro-card">
+              <h3>How to answer</h3>
+              <p>
+                Use practical answers. Rough numbers are acceptable if you explain the <a class="glossary-link" href="#glossary-source" data-term="source">source</a> or <a class="glossary-link" href="#glossary-assumption" data-term="assumption">assumption</a>. Leave a note when the answer is uncertain.
+              </p>
+            </article>
+            <article class="intro-card">
+              <h3>What this is not</h3>
+              <p>
+                This is not <a class="glossary-link" href="#glossary-vrc" data-term="vrc">VRC</a> approval, legal advice, or a final credit estimate. It is a structured way to decide what is ready and what needs work.
+              </p>
+            </article>
+            <article class="intro-card">
+              <h3>Privacy</h3>
+              <p>
+                Answers are saved in this browser on this computer. Use the save button if you want to keep or share a copy of the answers.
+              </p>
+            </article>
+          </div>
+
+          <section class="intro-next" aria-label="Suggested workflow">
+            <h3>Suggested workflow</h3>
+            <ol>
+              <li>Enter a project name.</li>
+              <li>Answer the questions with the best information available.</li>
+              <li>Use the Overview page to see <a class="glossary-link" href="#glossary-must-fix" data-term="must-fix">must-fix</a> issues and missing answers.</li>
+              <li>Save a summary or answers file for follow-up.</li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="overview" class="view" aria-labelledby="overviewTitle">
+          <div class="view-title">
+            <div>
+              <p class="eyebrow">First-pass result</p>
+              <h2 id="overviewTitle">
+                Can this project move forward?
+                <span class="help-tip" tabindex="0" aria-label="About this first-pass check" data-tip="Use this result to decide whether the project has enough basic evidence for a deeper VRC review. It is based on the answers, missing information, and must-fix issues shown below.">?</span>
+              </h2>
+            </div>
+            <span id="resultBadge" class="result-badge">Calculating</span>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="score-panel" aria-label="Result summary">
+              <div id="scoreGauge" class="score-gauge" style="--score-pct: 0%">
+                <div class="score-readout">
+                  <strong id="scorePct">0%</strong>
+                  <span id="scoreValue">0.0 / 5</span>
+                </div>
+                <div class="spectrum-meter" aria-hidden="true">
+                  <span class="spectrum-marker"></span>
+                </div>
+                <div class="spectrum-labels" aria-hidden="true">
+                  <span>Not ready</span>
+                  <span>Needs work</span>
+                  <span>Stronger case</span>
+                </div>
+              </div>
+              <div class="score-meta">
+                <div>
+                  <span>
+                    Must fix
+                    <span class="help-tip" tabindex="0" aria-label="About must-fix items" data-tip="These are key issues that can stop the project from moving to deeper review. Open each item and add the missing source, boundary, explanation, or risk-control information.">?</span>
+                  </span>
+                  <strong id="hardStopCount">0</strong>
+                </div>
+                <div>
+                  <span>
+                    Missing answers
+                    <span class="help-tip" tabindex="0" aria-label="About missing answers" data-tip="These are unanswered fields. A provisional answer is acceptable if you explain the source, assumption, or document to check next.">?</span>
+                  </span>
+                  <strong id="gapCount">0</strong>
+                </div>
+                <div>
+                  <span>
+                    Done
+                    <span class="help-tip" tabindex="0" aria-label="About completed questions" data-tip="This counts questions with either an answer or a note. It shows progress only; it does not mean the evidence is strong enough yet.">?</span>
+                  </span>
+                  <strong id="vrcCount">0</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="kpi-strip" aria-label="Summary">
+              <div class="kpi">
+                <span>
+                  Overall strength
+                  <span class="help-tip" tabindex="0" aria-label="About overall strength" data-tip="This 0 to 5 score reflects how complete and supported the answers are. Higher scores usually mean fewer gaps before deeper VRC review.">?</span>
+                </span>
+                <strong id="readinessScore">0</strong>
+              </div>
+              <div class="kpi">
+                <span>
+                  Result now
+                  <span class="help-tip" tabindex="0" aria-label="About the current result" data-tip="This updates as answers change. Use it as a working signal, then read the must-fix list to see what evidence is driving the result.">?</span>
+                </span>
+                <strong id="grossValue">0</strong>
+              </div>
+              <div class="kpi">
+                <span>
+                  Questions done
+                  <span class="help-tip" tabindex="0" aria-label="About questions done" data-tip="This shows how many questions have been attempted. A question can count as done while still needing a better source or clearer note.">?</span>
+                </span>
+                <strong id="completeness">0%</strong>
+              </div>
+              <div class="kpi">
+                <span>
+                  Next action
+                  <span class="help-tip" tabindex="0" aria-label="About next action" data-tip="This suggests the most useful next step based on current answers. Start with must-fix items before spending time polishing lower-priority notes.">?</span>
+                </span>
+                <strong id="nextAction">Start questions</strong>
+              </div>
+            </section>
+
+            <section class="section-panel" aria-labelledby="sectionScoresTitle">
+              <div class="panel-header">
+                <h3 id="sectionScoresTitle">
+                  Topic strength
+                  <span class="help-tip" tabindex="0" aria-label="About topic strength" data-tip="These bars show where the evidence is stronger or weaker by topic. Use low bars to decide which project documents or experts to consult next.">?</span>
+                </h3>
+              </div>
+              <div id="sectionScores" class="bar-list"></div>
+            </section>
+
+            <section class="section-panel springboard-panel" aria-labelledby="springboardTitle">
+              <div class="panel-header">
+                <div>
+                  <h3 id="springboardTitle">
+                    Where to go deeper
+                    <span class="help-tip" tabindex="0" aria-label="About deeper prompts" data-tip="Tier 0 is a springboard. These cards group the result into practical work areas and show the next supporting information to collect.">?</span>
+                  </h3>
+                  <p class="panel-lede">Use these categories to decide which evidence, calculation, or ownership question to drill into next.</p>
+                </div>
+              </div>
+              <div id="springboardCategories" class="springboard-grid"></div>
+            </section>
+
+            <section class="section-panel priority-panel" aria-labelledby="priorityGapsTitle">
+              <div class="panel-header">
+                <h3 id="priorityGapsTitle">
+                  Fix these first
+                  <span class="help-tip" tabindex="0" aria-label="About what to fix first" data-tip="These are the answers most likely to improve the result. Add the missing source, assumption, estimate, or explanation before working through less important gaps.">?</span>
+                </h3>
+              </div>
+              <div id="priorityGaps" class="priority-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="intake" class="view" aria-labelledby="intakeTitle">
+          <div class="view-title">
+            <div>
+              <p class="eyebrow">Project information</p>
+              <h2 id="intakeTitle">
+                Questions
+                <span class="help-tip" tabindex="0" aria-label="About the questions" data-tip="Use the best information available now. Rough answers are acceptable if the notes say where they came from and what should be checked later.">?</span>
+              </h2>
+            </div>
+            <select id="sectionFilter" aria-label="Filter by section"></select>
+          </div>
+          <div id="questionList" class="question-list"></div>
+        </section>
+
+        <section id="decisions" class="view" aria-labelledby="decisionsTitle">
+          <div class="view-title">
+            <div>
+              <p class="eyebrow">How the answer is read</p>
+              <h2 id="decisionsTitle">
+                Review steps
+                <span class="help-tip" tabindex="0" aria-label="About review steps" data-tip="This shows how the answers are interpreted. Use any stop or ask-for-more step to identify the evidence needed before a deeper review.">?</span>
+              </h2>
+            </div>
+          </div>
+          <div id="decisionTree" class="decision-list"></div>
+        </section>
+
+        <section id="gaps" class="view" aria-labelledby="gapsTitle">
+          <div class="view-title">
+            <div>
+              <p class="eyebrow">Extra information</p>
+              <h2 id="gapsTitle">
+                What else we need
+                <span class="help-tip" tabindex="0" aria-label="About follow-up information" data-tip="This lists common evidence gaps and examples of what to collect. It is useful when the applicant needs to go back to technical, finance, or community teams.">?</span>
+              </h2>
+              <p class="section-lede">Some items are grouped because they are usually answered by the same team or document. Others are kept separate because they need a distinct decision, source, or owner.</p>
+            </div>
+          </div>
+          <div id="missingCategories" class="missing-category-grid"></div>
+          <div id="crosswalkTable" class="table-wrap roomy"></div>
+        </section>
+
+        <section id="glossary" class="view" aria-labelledby="glossaryTitle">
+          <div class="view-title">
+            <div>
+              <p class="eyebrow">Plain-language reference</p>
+              <h2 id="glossaryTitle">
+                Glossary
+                <span class="help-tip" tabindex="0" aria-label="About the glossary" data-tip="Use this page when a term in the questions or results is unclear. Linked terms elsewhere in the app open this page and highlight the relevant definition.">?</span>
+              </h2>
+              <p class="section-lede">Plain-language explanations of key terms used in the VRC Standard Framework draft, focused on what a Tier 0 applicant needs to understand and provide.</p>
+            </div>
+          </div>
+          <div id="glossaryList" class="glossary-list"></div>
+        </section>
+
+        <section id="model" class="view" aria-labelledby="modelTitle">
+          <div class="view-title">
+            <div>
+              <p class="eyebrow">Saved by the app</p>
+              <h2 id="modelTitle">
+                Information saved
+                <span class="help-tip" tabindex="0" aria-label="About saved information" data-tip="This shows the information structure behind the app. Use it to see what data may be needed later if the project moves beyond this first-pass check.">?</span>
+              </h2>
+            </div>
+          </div>
+          <div id="dataModel" class="table-wrap"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="icon-template">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d=""></path>
+      </svg>
+    </template>
+
+    <script src="app.js?v=12"></script>
+  </body>
+</html>
